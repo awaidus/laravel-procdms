@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Event::listen('illuminate.query', function ($query) {
+//    var_dump($query);
 });
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', 'OrderController@index');
+Route::get('/orders', 'OrderController@index');
+Route::get('order/show/{id}', 'OrderController@edit');
