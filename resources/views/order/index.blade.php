@@ -32,8 +32,10 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <a href="#/{{$item->id}}" class="btn btn-default"><i class="fa fa-pencil-square-o"
-                                                                         aria-hidden="true"></i></a>
+                    <a href="{{route('showOrder', ['id' => $item->id])}}" class="btn btn-default">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+
                 </td>
             </tr>
         @endforeach

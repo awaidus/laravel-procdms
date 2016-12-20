@@ -20,7 +20,8 @@
                 <span class="sr-only">Toggle navigation</span>
                 <span class="fa fa-bars" aria-hidden="true"></span>
             </button>
-            <a href="/" class="navbar-brand">
+            {{--{{link_to_route('home', 'Proc-DMS', null, ['class' => 'navbar-brand'] )}}--}}
+            <a href={{route('home')}} class="navbar-brand">
                 <i class="fa fa-home fa-lg" aria-hidden="true"></i> Procurement DMS</a>
         </div> {{--navbar-header--}}
 

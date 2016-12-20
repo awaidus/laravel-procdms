@@ -20,5 +20,6 @@ Event::listen('illuminate.query', function ($query) {
 //});
 
 Route::get('/', 'OrderController@index');
-Route::get('/orders', 'OrderController@index');
-Route::get('order/show/{id}', 'OrderController@edit');
+Route::get('/orders', 'OrderController@index')->name('home');
+Route::get('/order/show/{id?}', 'OrderController@show')->name('showOrder');
+Route::put('/order/store', 'OrderController@store')->name('storeOrder');
