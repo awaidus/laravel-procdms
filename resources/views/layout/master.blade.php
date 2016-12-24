@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="angularApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,16 @@
     <link rel="stylesheet" href={{asset('bower/bootstrap/dist/css/bootstrap.min.css')}}>
     <link rel="stylesheet" href={{asset('bower/font-awesome/css/font-awesome.min.css')}}>
     <link rel="stylesheet" href={{asset('css/style.css')}}>
+
+
+    <script src={{asset('bower/jquery/dist/jquery.min.js')}}></script>
+    <script src={{asset('bower/bootstrap/dist/js/bootstrap.min.js')}}></script>
+    <script src={{asset('bower/angular/angular.min.js')}}></script>
+    <script src={{asset('bower/angular-animate/angular-animate.min.js')}}></script>
+
+    <script src={{asset('angularApp/app.js')}}></script>
+    <script src={{asset('angularApp/controllers/orderCtrl.js')}}></script>
+
 
     <title>Proc-DMS</title>
 

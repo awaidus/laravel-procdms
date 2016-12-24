@@ -19,7 +19,23 @@ Event::listen('illuminate.query', function ($query) {
 //    return view('welcome');
 //});
 
-Route::get('/', 'OrderController@index');
+Route::group(['middleware' => ['web']], function () {
+    Route::resource('order', 'OrderController', ['names' => [
+        'create' => 'order.show',
+        'edit' => 'order.show',
+        'destroy' => 'order.destroy'
+    ]]);
+});
+
+//Route::get('/', 'OrderController@index');
+
+Route::get('/orderList', function () {
+    return App\Order::withTrashed()->with('local_supplier', 'foreign_supplier')->get();
+});
+
 Route::get('/orders', 'OrderController@index')->name('home');
 Route::get('/order/show/{id?}', 'OrderController@show')->name('showOrder');
-Route::put('/order/store', 'OrderController@store')->name('storeOrder');
+Route::post('/order/store', 'OrderController@store')->name('storeOrder');
+Route::delete('/order/destroy/{id}', 'OrderController@destroy')->name('destroyOrder');
+Route::post('/order/restore/{id}', 'OrderController@restore')->name('restoreOrder');
+
